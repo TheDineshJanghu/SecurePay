@@ -28,12 +28,8 @@ const NavMenu = ({ connected, publicKey }) => {
                     </WalletMultiButton>
                     
                 </li>
-            </ul>
-
-
-    
+            </ul>   
                     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgnexGe35Hb2efe6NkKe4w6T83ZSldiubxLscHBsLUGS3q0KEQC5EQ1UEDqkHmwLtDyfdUfcfC8NaMuxusmblqJgr7l_bGHNWQSedbdx0qrpRVv5uhs5zWQe0TaIjS0s5BH6ba8ddO4zj1L5idtBHU857zNGI7bJzitmLKdoYA5Gvhi7ZTTbFPQqoAH5Hc" />
-
         </nav>
     )
 }
