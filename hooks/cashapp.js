@@ -9,14 +9,33 @@ import BigNumber from 'bignumber.js';
 export const useCashApp = () => {
 
     const useLocalStorage = (storageKey, fallbackState) => {
-        const [value, setValue] = useState(
-            JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
-        );
-        useEffect(() => {
-            localStorage.setItem(storageKey, JSON.stringify(value));
-        }, [value, storageKey]);
-        return [value, setValue];
-    };
+    const [value, setValue] = useState(fallbackState);
+
+    useEffect(() => {
+        try {
+            const storedValue = window.localStorage.getItem(storageKey);
+
+            if (storedValue !== null) {
+                setValue(JSON.parse(storedValue));
+            }
+        } catch (error) {
+            console.error(`Failed to read localStorage key: ${storageKey}`, error);
+        }
+    }, [storageKey]);
+
+    useEffect(() => {
+        try {
+            window.localStorage.setItem(
+                storageKey,
+                JSON.stringify(value)
+            );
+        } catch (error) {
+            console.error(`Failed to save localStorage key: ${storageKey}`, error);
+        }
+    }, [value, storageKey]);
+
+    return [value, setValue];
+};
 
 
     const { connection } = useConnection();
@@ -28,12 +47,17 @@ export const useCashApp = () => {
     const [transactions, setTransactions] = useLocalStorage("transactions", []);
     const [newTransactionModalOpen, setNewTransactionModalOpen] = useState(false)
 
-    useEffect(() => {
-        if (connected) {
-            setAvatar(getAvatarUrl(publicKey.toString()))
-            setUserAddress(publicKey.toString())
-        }
-    }, [connected])
+useEffect(() => {
+    if (connected && publicKey) {
+        const address = publicKey.toString();
+
+        setAvatar(getAvatarUrl(address));
+        setUserAddress(address);
+    } else {
+        setAvatar("");
+        setUserAddress("");
+    }
+}, [connected, publicKey]);
 
 
     async function makeTransaction(fromWallet, toWallet, amount, reference) {
@@ -73,7 +97,7 @@ export const useCashApp = () => {
         const reference = Keypair.generate().publicKey
         const transaction = await makeTransaction(fromWallet, toWallet, bnAmount, reference)
 
-        const txnHash = await sendTransaction(transaction, connection)
+        await sendTransaction(transaction, connection)
 
 
         const newID = (transactions.length + 1).toString()
