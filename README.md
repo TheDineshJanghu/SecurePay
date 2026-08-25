@@ -576,6 +576,3 @@ GitHub: [@bhaviii17](https://github.com/bhaviii17)
 
 ---
 
-# ⭐ Project
-
-GitHub Repository: https://github.com/TheDineshJanghu/SecurePay
