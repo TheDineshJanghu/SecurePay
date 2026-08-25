@@ -561,18 +561,5 @@ GitHub: [@bhaviii17](https://github.com/bhaviii17)
 
 ---
 
-# 📌 Resume Project Description
-
-### SecurePay — Decentralized Payment Application
-
-> Developed a Web3 payment application using **Next.js, React, Solana Web3.js, Solana Pay, and Solana Wallet Adapter**, enabling wallet-connected SOL transfers, QR-based payment requests, transaction verification, and payment history management on Solana Devnet.
-
-### Resume Bullet Points
-
-* Developed a **decentralized payment application** using Next.js, React, Solana Web3.js, and Solana Wallet Adapter for wallet-connected SOL transactions.
-* Integrated **Solana Pay QR payments** with reference-based transaction discovery and transfer validation for receiving payments.
-* Designed reusable React components and custom hooks for **wallet management, transaction creation, payment flows, and transaction history**.
-* Implemented client-side transaction persistence and a responsive payment interface using **Tailwind CSS**.
-
 ---
 
