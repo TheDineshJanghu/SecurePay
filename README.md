@@ -581,7 +581,3 @@ GitHub: [@bhaviii17](https://github.com/bhaviii17)
 GitHub Repository:
 
 https://github.com/TheDineshJanghu/SecurePay
-
----
-
-### Built with ❤️ using React, Next.js, and Solana.
