@@ -4,6 +4,7 @@
 
 SecurePay is a **Web3-based decentralized payment application** that enables users to connect their Solana wallet, send SOL payments, receive payments through QR codes, verify transactions, and manage their payment activity through a modern web interface.
 
+
 The project is built with **Next.js, React, Solana Web3.js, Solana Pay, Solana Wallet Adapter, and Tailwind CSS**, with the current payment workflow operating on **Solana Devnet**. The application focuses on demonstrating practical blockchain payment integration inside a modern web application.
 
 ---
